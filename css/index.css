@@ -57,7 +57,7 @@ section {
 }
 .slideInner .text { position:absolute;  top:50%;
     transform:translateY(-50%); left:300px; 
-    font-size:80px; }
+    font-size:80px; width:600px; }
 
 .slideInner .text p:nth-child(1) { 
     opacity: 0;
@@ -76,10 +76,26 @@ section {
     animation:fadeInLeft 0.5s both 0.6s;
 }
 
-.slideInner .slide1 .text { color:red }
-.slideInner .slide2 .text { color:blue }
-.slideInner .slide3 .text { color:yellow }
-.slideInner .slide4 .text { color:green }
+.slideInner .slide1 .text p { 
+    background: linear-gradient(to right, #f00, #00f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+.slideInner .slide2 .text p { 
+    background: linear-gradient(to left, #f00 40%, #00f 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.slideInner .slide3 .text p { 
+    background: linear-gradient(to right top, #f00 30%, #00f 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+.slideInner .slide4 .text p { 
+    background: linear-gradient(to right, #f00 10%, #00f 15%, #0f0 35%, #f0f 50%, #0ff 60%, #ff5800 75%, #f05 87%, #ff7fd3 95%, #326d18 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .slideInner .slick-dots {
     position:absolute; 
     bottom:50px; 

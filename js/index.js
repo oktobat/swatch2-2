@@ -60,7 +60,25 @@ $('#menu li a').on('click focus', function(e){
     if (num===0) {
         $('.skillContainer > div').removeClass('on')
     } else {
-        $('.skillContainer > div').addClass('on')
+        if ( !$('.skillContainer > div').hasClass('on')) {
+            $('.skillContainer > div').addClass('on')
+            count(70, '.html', 10)
+            count(60, '.css', 20)
+            count(80, '.script', 30)
+            count(60, '.jquery', 40)
+            count(50, '.react', 50)
+        }
+    }
+    if (num<2) {
+        $('#sect3').removeClass('on')
+        $('#sect3 ul li').css({
+            transitionDelay:'0s'
+        })
+    } else {
+        for (let i=0; i<8; i++) {
+            $('#sect3 ul li').eq(i).css({ transitionDelay:'1.'+i+'s' })    
+        }
+        $('#sect3').addClass('on')
     }
     var secDist = $('section').eq(num).offset().top
     $('html, body').stop().animate({
@@ -70,7 +88,7 @@ $('#menu li a').on('click focus', function(e){
     })
 })
 
-function count(jumsu, cname) {
+function count(jumsu, cname, time) {
     let count = 0
     let stop = setInterval(function(){
         count++
@@ -79,7 +97,7 @@ function count(jumsu, cname) {
         } else {
             clearInterval(stop)
         }
-    }, 60)
+    }, time)
 }
 
 
@@ -110,11 +128,11 @@ $(window).on('scroll', function(){
         $('#menu li').eq(1).siblings().removeClass('on')
         if ( !$('.skillContainer > div').hasClass('on') ) {
             $('.skillContainer > div').addClass('on')
-            count(70, '.html')
-            count(60, '.css')
-            count(80, '.script')
-            count(60, '.jquery')
-            count(50, '.react')
+            count(70, '.html', 10)
+            count(60, '.css', 20)
+            count(80, '.script', 30)
+            count(60, '.jquery', 40)
+            count(50, '.react', 50)
         }
 
         
